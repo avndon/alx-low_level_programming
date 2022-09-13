@@ -8,8 +8,9 @@
  * Returm Always 0
  */
 
-int _putchar(char c)
+int main(void)
 {
-	return (write(1, &c, 1));
+	write("_putchar\n");
+	return (0);
 }
 
