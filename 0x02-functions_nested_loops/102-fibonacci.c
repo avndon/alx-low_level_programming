@@ -1,4 +1,4 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
  * main - prints the first 50 Fibonacci numbers, starting with 1 and 2
@@ -19,14 +19,14 @@ int main(void)
 	while (count < 49)
 	{
 		sum = first + second;
-		_putchar(sum);
+		printf("%li, ", sum);
 		first = second;
 		second = sum;
 
 		count++;
 	}
 	sum = first + second;
-	_putchar('\n');
+	printf("%li\n", sum);
 
 	return (0);
 }
