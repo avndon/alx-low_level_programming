@@ -19,14 +19,14 @@ int main(void)
 	while (count < 49)
 	{
 		sum = first + second;
-		_putchar(sum);
+		_putchar("%li, ", sum);
 		first = second;
 		second = sum;
 
 		count++;
 	}
 	sum = first + second;
-	_putchar('\n');
+	_putchar("%li\n", sum);
 
 	return (0);
 }
