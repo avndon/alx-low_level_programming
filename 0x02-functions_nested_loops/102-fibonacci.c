@@ -19,7 +19,7 @@ int main(void)
 	while (count < 49)
 	{
 		sum = first + second;
-		_putchar("%li, ", sum);
+		_putchar(sum);
 		first = second;
 		second = sum;
 
