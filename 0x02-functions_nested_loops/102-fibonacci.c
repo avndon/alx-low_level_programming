@@ -26,7 +26,7 @@ int main(void)
 		count++;
 	}
 	sum = first + second;
-	_putchar('\n', sum);
+	_putchar('\n');
 
 	return (0);
 }
