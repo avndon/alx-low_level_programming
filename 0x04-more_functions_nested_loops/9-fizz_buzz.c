@@ -23,10 +23,8 @@ int main(void)
 		{
 			if (i == 100)
 				printf("Buzz");
-				else
-				{
-					printf("Buzz");
-				}
+			else
+				printf("Buzz");
 		}
 		else if (i % 3 == 0)
 		{
