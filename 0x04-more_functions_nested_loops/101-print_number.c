@@ -5,18 +5,18 @@
  * power - exponents
  * @base: base
  * @exp: exponent
- * 
+ *
  * Return: result (int)
  */
 
 int power(int base, int exp)
 {
-	int i, n;
+	int i, num;
 
-	n = 1;
+	num = 1;
 	for (i = 0; i < exp; ++i)
-		n *= base;
-	return (n);
+		num *= base;
+	return (num);
 }
 
 /**
