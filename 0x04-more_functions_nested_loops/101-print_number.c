@@ -2,10 +2,28 @@
 #include <math.h>
 
 /**
+ * power - exponents
+ * @base: base
+ * @exp: exponent
+ * 
+ * Return: result (int)
+ */
+
+int power(int base, int exp)
+{
+	int i, n;
+
+	n = 1;
+	for (i = 0; i < exp; ++i)
+		n *= base;
+	return (n);
+}
+
+/**
  * print_number - prints an integer
  * @n: number to print
  *
- * Return void
+ * Return: void
  */
 
 void print_number(int n)
