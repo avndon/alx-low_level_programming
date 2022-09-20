@@ -1,4 +1,4 @@
-#include "head.h"
+#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -15,7 +15,6 @@ int main(void)
 
 	n = 0;
 	i = 0;
-
 	srand(time(NULL));
 	while (n < 2645)
 	{
