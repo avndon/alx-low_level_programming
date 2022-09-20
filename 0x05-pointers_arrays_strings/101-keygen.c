@@ -10,16 +10,24 @@
 
 int main(void)
 {
-	char c;
-	int x;
+	char c[100];
+	int r, n, i;
 
-	srand(time(0));
-	while (x <= 2645)
+	n = 0;
+	i = 0;
+
+	srand(time(NULL));
+	while (n < 2645)
 	{
-		c = rand() % 128;
-		x += c;
-		putchar(c);
+		r = rand() % 122;
+		if (r > 32)
+		{
+			a[i++] = r;
+			n += r;
+		}
 	}
-	putchar(2772 - x);
+	a[i++] = (2772 - n);
+	a[i] = '\0';
+	printf("%s", a);
 	return (0);
 }
