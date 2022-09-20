@@ -5,12 +5,12 @@
 /**
  * main - entry point generates a random password
  *
- * Return: the generated password
+ * Return: Always 0
  */
 
 int main(void)
 {
-	char c[100];
+	char a[100];
 	int r, n, i;
 
 	n = 0;
