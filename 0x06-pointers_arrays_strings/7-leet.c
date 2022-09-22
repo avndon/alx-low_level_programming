@@ -3,9 +3,9 @@
 /**
  * leet - function that encodes a string into 1337
  *
- * @s: string array
+ * @s: input string
  *
- * Return: string array
+ * Return: the pointer dest
  */
 
 char *leet(char *s)
@@ -20,8 +20,10 @@ char *leet(char *s)
 		for (i = 0; i < 5; i++)
 		{
 			if (*(s + count) == lower_case[i] || *(s + count) == upper_case[i])
+			{
 				*(s + count) = numbers[i];
-			break;
+				break;
+			}
 		}
 		count++;
 	}
