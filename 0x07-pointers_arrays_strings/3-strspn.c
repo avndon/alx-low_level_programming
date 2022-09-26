@@ -12,8 +12,8 @@ unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int count = 0;
 	unsigned int prev = 0;
-
 	int i, j;
+
 	i = 0;
 	j = 0;
 
