@@ -7,32 +7,24 @@
  * Return: pointer to initial segment of haystack
  */
 
-char *_strstr(char *haystack, char *needle)
+char  *_strstr(char *haystack, char *needle)
 {
-	int i, j, start;
-	int nlen = 0;
+	char *str1, *str2; /*Declaring variables*/
 
-	i = 0;
-	j = 0;
-	start = 0;
+	while (*haystack != '\0')
+	{
+		str1 = haystack; /*values*/
+		str2 = needle;
+		/*Star WHILE*/
 
-	while (needle[nlen] != '\0')
-	{
-		nlen++;
-	}
-	for (i = 0; haystack[i] != '\0'; i++)
-	{
-		for (j = 0; j < nlen && haystack[i] == needle[j]; j++, i++)
+		while (*haystack != '\0' && *str2 != '\0' && *haystack == *str2)
 		{
-			if (j == 0)
-			{
-				start = i;
-			}
-			if (j == nlen - 1)
-			{
-				return (haystack + start);
-			}
+			haystack++;
+			str2++;
 		}
+		if (*str2 == '\0')
+			return (str1);
+		haystack = str1 + 1;
 	}
 	return (0);
 }
