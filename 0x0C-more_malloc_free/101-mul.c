@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include "main.h"
 
+int is_digit(char *s);
+int _strlen(char *s);
+void errors(void);
+
 /**
  * is_digit - checks if a string contains a non-digit char
  *
