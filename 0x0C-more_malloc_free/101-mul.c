@@ -1,50 +1,21 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 int is_digit(char *s);
 int _strlen(char *s);
 void errors(void);
 
 /**
- * is_digit - checks if a string contains a non-digit char
+ * main -  a program that multiplies two positive numbers
  *
- * @s: string to be evaluated
+ * @argc: the number of arguments
+ * @argv: an array of strings containing each argument
  *
- * Return: 0 if a non-digit is found, 1 otherwise
+ * Return: returns 0 (success)
  */
 
-int is_digit(char *s)
-{
-	int i = 0;
-
-	while (s[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-/**
- * errors - handles errors for main
- */
-
-void errors(void)
-{
-	printf("Error\n");
-	exit(98);
-}
-
-/**
- * main - multiplies two positive numbers
- *
- * @argc: number of arguments
- * @argv: array of arguments
- *
- * Return: always 0 (Success)
- */
-
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	char *s1, *s2;
 	int len1, len2, len, i, carry, digit1, digit2, *result, a = 0;
@@ -86,4 +57,55 @@ int main(int argc, char *argv[])
 	_putchar('\n');
 	free(result);
 	return (0);
+}
+
+/**
+ * is_digit - checks if every character of a string is a digit
+ *
+ * @s: the string to be checked
+ *
+ * Return: returns 0 if a non-digit is found, 1 otherwise
+ */
+
+int is_digit(char *s)
+{
+	int i = 0;
+
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+	}
+	return (1);
+}
+
+/**
+ * _strlen - calculates the length of a string (excluding the null-terminator)
+ *
+ * @s: the string to be checked
+ *
+ * Return: returns the length of the string as an int
+ */
+
+int _strlen(char *s)
+{
+	int i = 0, c = 0;
+
+	for (i = 0; s[i] != '\0'; i++)
+		c++;
+	return (c);
+}
+
+/**
+ * errors - prints out "Error" if an error is encountered and exits with
+ *
+ * a status of 98
+ *
+ * Return: returns nothing
+ */
+
+void errors(void)
+{
+	printf("Error\n");
+	exit(98);
 }
