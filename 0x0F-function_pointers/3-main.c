@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * main - performs simple operations (calculator)
+ * main - performs simple operations
  *
  * @argc: number of arguments
  * @argv: array of arguments
@@ -11,23 +11,32 @@
  * Return: 0 (Always)
  */
 
-int (*get_op_func(char *s))(int, int)
+int main(int argc, char *argv[])
 {
-	op_t ops[] = {
-		{"+", op_add},
-		{"-", op_sub},
-		{"*", op_mul},
-		{"/", op_div},
-		{"%", op_mod},
-		{NULL, NULL}
-	};
-	int i = 0;
+	int arg1, arg2, result;
+	char o;
+	int (*func)(int, int);
 
-	while (i < 10)
+	if (argc != 4)
 	{
-		if (s[0] == ops->op[i])
-			break;
-		i++;
+		printf("Error\n");
+		exit(98);
 	}
-	return (ops[i / 2].f);
+	arg1 = atoi(argv[1]);
+	arg2 = atoi(argv[3]);
+	func = get_op_func(argv[2]);
+	if (!func)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+	o = *argv[2];
+	if ((o == '/' || o == '%') && arg2 == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	result = func(arg1, arg2);
+	printf("%d\n", result);
+	return (0);
 }
