@@ -5,28 +5,28 @@
 
 /**
  * print_char - print char
- *
  * @args: list of arguments
  */
 
 void print_char(va_list args)
 {
-
 	printf("%c", va_arg(args, int));
 }
+
 /**
  * print_int - print int
+ *
  * @args: list of arguments
  */
 
 void print_int(va_list args)
-
 {
 	printf("%d", va_arg(args, int));
 }
 
 /**
  * print_float - print float
+ *
  * @args: list of arguments
  */
 
@@ -34,12 +34,11 @@ void print_float(va_list args)
 {
 	printf("%f", va_arg(args, double));
 }
+
 /**
  * print_string - print string
- *
  * @args: list of arguments
  */
-
 void print_string(va_list args)
 {
 	char *s = va_arg(args, char *);
@@ -54,7 +53,6 @@ void print_string(va_list args)
 
 /**
  * print_all - prints anything*
- *
  * @format: list of types of arguments
  */
 
@@ -76,6 +74,7 @@ void print_all(const char * const format, ...)
 	va_start(args, format);
 	i = 0;
 	while (format != NULL && format[i] != '\0')
+	{
 		j = 0;
 		while (ops[j].c != '\0')
 		{
