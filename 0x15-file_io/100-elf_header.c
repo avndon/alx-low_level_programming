@@ -149,43 +149,33 @@ void print_osabi(unsigned char *e_ident)
 	{
 	case ELFOSABI_NONE:
 		printf("UNIX - System V\n");
-
 		break;
 	case ELFOSABI_HPUX:
 		printf("UNIX - HP-UX\n");
-
 		break;
 	case ELFOSABI_NETBSD:
 		printf("UNIX - NetBSD\n");
-
 		break;
 	case ELFOSABI_LINUX:
 		printf("UNIX - Linux\n");
-
 		break;
 	case ELFOSABI_SOLARIS:
 		printf("UNIX - Solaris\n");
-
 		break;
 	case ELFOSABI_IRIX:
 		printf("UNIX - IRIX\n");
-
 		break;
 	case ELFOSABI_FREEBSD:
 		printf("UNIX - FreeBSD\n");
-
 		break;
 	case ELFOSABI_TRU64:
 		printf("UNIX - TRU64\n");
-
 		break;
 	case ELFOSABI_ARM:
 		printf("ARM\n");
-
 		break;
 	case ELFOSABI_STANDALONE:
 		printf("Standalone App\n");
-
 		break;
 	default:
 		printf("<unknown: %x>\n", e_ident[EI_OSABI]);
@@ -311,7 +301,6 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(98);
 	}
 	header = malloc(sizeof(Elf64_Ehdr));
-
 	if (header == NULL)
 	{
 		close_elf(o);
@@ -319,7 +308,6 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(98);
 	}
 	r = read(o, header, sizeof(Elf64_Ehdr));
-
 	if (r == -1)
 	{
 		free(header);
@@ -337,7 +325,6 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	print_abi(header->e_ident);
 	print_type(header->e_type, header->e_ident);
 	print_entry(header->e_entry, header->e_ident);
-
 	free(header);
 	close_elf(o);
 	return (0);
